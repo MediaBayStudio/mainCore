@@ -1,0 +1,235 @@
+.soc-header {
+  color: #a0a0a0;
+  display: block;
+  font-size: 0.6rem;
+  line-height: 1rem;
+  font-weight: 500;
+  left: 0;
+  padding: 0px 0px 8px;
+  margin-top: 7px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.soc-header:after {
+  border-bottom: 1px solid #e5e5e5;
+  bottom: 1px;
+  content: "";
+  display: inline-block;
+  height: 1px;
+  left: 15px;
+  width: 120px;
+}
+
+.button-share {
+  display: block;
+  color: #FFFFFF;
+  margin-bottom: 5px;
+  border: 1px solid #E5E5E5;
+  border-radius: 4px;
+  width: 100%;
+  height: 32px;
+  text-align: center;
+  overflow: hidden;
+  box-shadow: none;
+}
+
+.button-share:hover {
+	color: #FFFFFF;
+}
+
+.button-share .share-icon {
+	width: 65%;
+  padding-top: 5px;
+	font-size: 1.1rem;
+	display: block;
+	height: 100%;
+	float: left;
+}
+
+.button-share .share-vk {
+	background-color: #6097C9;
+}
+
+.button-share .share-facebook {
+	background-color: #6C86BC;
+}
+
+.button-share .share-twitter {
+	background-color: #77c6ec;
+}
+
+.button-share .share-google-plus {
+	background-color: #dd4b39;
+}
+
+.button-share .share-odnoklassniki {
+	background-color: #FF9F4D;
+}
+
+.button-share:hover .share-vk {
+	background-color: #4D87BB;
+}
+
+.button-share:hover .share-facebook {
+	background-color: #526FAD;
+}
+
+.button-share:hover .share-twitter {
+	background-color: #53B4E0;
+}
+
+.button-share:hover .share-google-plus {
+	background-color: #CD3626;
+}
+
+.button-share:hover .share-odnoklassniki {
+	background-color: #F99846;
+}
+
+.button-count {
+	font-size: 0.8rem;;
+	color: #AFAFAF;
+	display: block;
+	line-height: 2.4;
+	font-weight: 500;
+}
+
+.button-share .fa-caret-left {
+	float: right;
+	font-size: 1rem;
+  line-height: 3rem;
+  margin-right: -1px;
+}
+
+.share-ad {
+	margin-top: 10px;
+}
+
+/* Tooltip */
+
+.tooltip-content {
+	position: absolute;
+	background: #6097C9;
+	width: 200px;
+	bottom: 90%;
+	left: 123%;
+	margin-bottom: -1em;
+	padding: 13px;
+	border-radius: 20px;
+	font-size: 0.8rem;;
+  line-height: 1.2rem;
+	text-align: center;
+	color: #fff;
+	opacity: 0;
+	cursor: default;
+	pointer-events: none;
+	font-style: italic;
+	transition: opacity 0.3s, transform 0.3s;
+	font-weight: 400;
+  z-index: 1
+}
+
+.ua-mac_os_x.ua-webkit .tooltip-content {
+	font-weight: 500;
+}
+
+.vk .tooltip-content {
+	background: #6097C9;
+	bottom: 78%;
+}
+
+.google-plus .tooltip-content {
+	background: #DD4B39;
+	bottom: 14%;
+}
+
+.twitter .tooltip-content {
+	background: #77C6EC;
+	bottom: 46%;
+}
+
+.facebook .tooltip-content {
+	background: #6C86BC;
+	bottom: 30%;
+}
+
+.odnoklassniki .tooltip-content {
+	background: #FF9F4D;
+	bottom: 63%;
+}
+
+.tooltip-west .tooltip-content {
+	-webkit-transform-origin: -2em 50%;
+	transform-origin: -2em 50%;
+	-webkit-transform: translate3d(0,50%,0) rotate3d(1,1,1,30deg);
+	transform: translate3d(0,50%,0) rotate3d(1,1,1,30deg);
+}
+
+.tooltip:hover .tooltip-content {
+	opacity: 1;
+	-webkit-transform: translate3d(0,50%,0) rotate3d(0,0,0,0);
+	transform: translate3d(0,50%,0) rotate3d(0,0,0,0);
+	pointer-events: auto;
+}
+
+.tooltip-content::before,
+.tooltip-content::after {
+	content: '';
+	position: absolute;
+}
+
+.tooltip-content::before {
+	height: 100%;
+	width: 2em;
+}
+
+.tooltip-content::after {
+	width: 2em;
+	height: 2em;
+	top: 50%;
+	margin: -1em 0 0;
+}
+
+.vk .tooltip-content::after {
+	background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgdmlld0JveD0iMCAwIDgwIDgwIj48cGF0aCBmaWxsPSIjNjA5N0M5IiBkPSJNODAgMHMtNS42MzEgMTQuNDQ1LTI1LjcxNSAyNy4yMTNjLTI0LjMzOSAxNS40NzUtNDEuNDk1IDYuNzg0LTUwLjUzMyAzLjIwNC0zLjk1Ni0xLjU2Ny00LjI2NSAxLjAyMS0yLjk2NiAzLjgxNCAxNS42NjQgMzMuNzAzIDc5LjIxNCA0NS4zODMgNzkuMjE0IDQ1LjM4M3YtNzkuNjE0eiIvPjwvc3ZnPg==) no-repeat center center;
+	background-size: 100%;
+}
+
+.twitter .tooltip-content::after {
+	background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgdmlld0JveD0iMCAwIDgwIDgwIj48cGF0aCBmaWxsPSIjNzdDNkVDIiBkPSJNODAgMHMtNS42MzEgMTQuNDQ1LTI1LjcxNSAyNy4yMTNjLTI0LjMzOSAxNS40NzUtNDEuNDk1IDYuNzg0LTUwLjUzMyAzLjIwNC0zLjk1Ni0xLjU2Ny00LjI2NSAxLjAyMS0yLjk2NiAzLjgxNCAxNS42NjQgMzMuNzAzIDc5LjIxNCA0NS4zODMgNzkuMjE0IDQ1LjM4M3YtNzkuNjE0eiIvPjwvc3ZnPg==) no-repeat center center;
+	background-size: 100%;
+}
+
+.google-plus .tooltip-content::after {
+	background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgdmlld0JveD0iMCAwIDgwIDgwIj48cGF0aCBmaWxsPSIjREQ0QjM5IiBkPSJNODAgMHMtNS42MzEgMTQuNDQ1LTI1LjcxNSAyNy4yMTNjLTI0LjMzOSAxNS40NzUtNDEuNDk1IDYuNzg0LTUwLjUzMyAzLjIwNC0zLjk1Ni0xLjU2Ny00LjI2NSAxLjAyMS0yLjk2NiAzLjgxNCAxNS42NjQgMzMuNzAzIDc5LjIxNCA0NS4zODMgNzkuMjE0IDQ1LjM4M3YtNzkuNjE0eiIvPjwvc3ZnPg==) no-repeat center center;
+	background-size: 100%;
+}
+
+.facebook .tooltip-content::after {
+	background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgdmlld0JveD0iMCAwIDgwIDgwIj48cGF0aCBmaWxsPSIjNkM4NkJDIiBkPSJNODAgMHMtNS42MzEgMTQuNDQ1LTI1LjcxNSAyNy4yMTNjLTI0LjMzOSAxNS40NzUtNDEuNDk1IDYuNzg0LTUwLjUzMyAzLjIwNC0zLjk1Ni0xLjU2Ny00LjI2NSAxLjAyMS0yLjk2NiAzLjgxNCAxNS42NjQgMzMuNzAzIDc5LjIxNCA0NS4zODMgNzkuMjE0IDQ1LjM4M3YtNzkuNjE0eiIvPjwvc3ZnPg==) no-repeat center center;
+	background-size: 100%;
+}
+
+.odnoklassniki .tooltip-content::after {
+	background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgdmlld0JveD0iMCAwIDgwIDgwIj48cGF0aCBmaWxsPSIjRkY5RjREIiBkPSJNODAgMHMtNS42MzEgMTQuNDQ1LTI1LjcxNSAyNy4yMTNjLTI0LjMzOSAxNS40NzUtNDEuNDk1IDYuNzg0LTUwLjUzMyAzLjIwNC0zLjk1Ni0xLjU2Ny00LjI2NSAxLjAyMS0yLjk2NiAzLjgxNCAxNS42NjQgMzMuNzAzIDc5LjIxNCA0NS4zODMgNzkuMjE0IDQ1LjM4M3YtNzkuNjE0eiIvPjwvc3ZnPg==) no-repeat center center;
+	background-size: 100%;
+}
+
+.tooltip-west .tooltip-content::before,
+.tooltip-west .tooltip-content::after {
+	right: 98%; /* because of FF, otherwise we have a gap */
+}
+
+.tooltip-east .tooltip-content::before,
+.tooltip-east .tooltip-content::after {
+	left: 99%; /* because of FF, otherwise we have a gap */
+}
+
+.tooltip-east .tooltip-content::after {
+	-webkit-transform: scale3d(-1,1,1);
+	transform: scale3d(-1,1,1);
+}
+
+/* End Tooltip */

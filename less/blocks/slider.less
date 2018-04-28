@@ -1,0 +1,139 @@
+.slider {
+  height: 480px;
+  margin-bottom: 47px;
+  background: transparent linear-gradient(-45deg, @gradient-start 0%, @gradient-end 100%) repeat scroll 0% 0%;
+}
+
+
+#main-slider {
+	position: relative;
+}
+
+#main-slider .owl-prev, #main-slider .owl-next {
+  position: absolute;
+  top: ~"calc(50% - 20px)";
+  background: none repeat scroll 0 0 rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+  cursor: pointer;
+  display: block;
+  height: 40px;
+  outline: medium none;
+  position: absolute;
+  text-decoration: none;
+  width: 40px;
+  z-index: 130;
+  padding: 0;
+  margin: 0;
+}
+
+#main-slider .owl-prev {
+	left: 10px;
+}
+
+#main-slider .owl-next {
+	right: 10px;
+}
+
+#main-slider .fa {
+  color: #fff;
+  font-size: 20px;
+  padding-top: 1px;
+}
+
+#main-slider .owl-next .fa {
+	padding-left: 3px;
+	position: relative;
+}
+
+#main-slider .owl-prev .fa {
+	padding-left: 0;
+	position: relative;
+}
+
+#main-slider .item {
+	background: none repeat scroll 0% 0% #000;
+	line-height: 0;
+	position: relative;
+	border-radius: 8px;
+}
+
+#main-slider .item img {
+	opacity: .95;
+	border-radius: 5px;
+	width: 100%;
+  height: 100%;
+}
+
+.slide--content {
+  position: absolute;
+  top: ~"calc(50% - 117px)";
+  background: @slide-description none repeat scroll 0 0;
+  border-radius: 10px;
+  height: 214px;
+  min-width: 340px;
+  line-height: 1.4rem;
+  display: flex;
+  flex-direction: column;
+
+  &__center {
+    left: 28%;
+    width: 44%;
+    padding: 10px;
+    text-align: center;
+  }
+
+  &__left {
+    left: 15px;
+  	margin-left: 50px;
+  	padding: 10px 20px;
+  }
+
+  &__right {
+    right: 20px;
+    margin-right: 50px;
+    padding: 10px 20px;
+    text-align: right;
+
+  }
+}
+
+.slide--wrapper{
+	margin: auto;
+}
+
+.slide--title{
+	font-family: 'Roboto Condensed', sans-serif !important;
+	font-size: 1.4rem;
+  color: @slite-title-color;
+	text-transform: uppercase;
+	margin: 15px 0px;
+	margin-top: 13px;
+	font-weight: 800;
+}
+
+.slide--description {
+	font-family: 'Roboto', sans-serif !important;
+	font-size: 1rem;
+  color: @slide-excert-color;
+	max-width: 380px;
+	font-weight: 500;
+	margin-bottom: 10px !important;
+}
+
+.slide--button {
+	padding: 10px 20px;
+	font-weight: 600;
+	text-transform: uppercase;
+	display: inline-block;
+	border-radius: 5px;
+	margin: 0 !important;
+	outline: none !important;
+  text-decoration: none;
+	background-color: #34acc7;
+	color: @slide-button-color !important;
+	text-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+
+  &:hover {
+  	background-color: #e79dbe;
+  }
+}
