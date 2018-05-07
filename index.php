@@ -37,8 +37,16 @@ get_header(); ?>
           wp_reset_postdata(); ?>
       </div>
     </section>
+    <div class="page-main--content">
+      <section class="page-main--categories">
+        <?php dynamic_sidebar('main'); ?>
+      </section>
+      <sectioin class="page-main--modules">
+        <?php dynamic_sidebar('modules'); ?>
+      </section>
+    </div>
   </main>
-
+  <?php get_sidebar(); ?>
 </div>
 
 

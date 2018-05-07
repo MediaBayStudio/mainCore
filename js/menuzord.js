@@ -1,21 +1,3 @@
-
-// Menuzord Properties
-
-jQuery(document).ready(function(){
-    jQuery("#menuzord").menuzord();
-    $('.owl-carousel').owlCarousel({
-      loop:true, //Зацикливаем слайдер
-      dots:false,
-      items:1,
-      nav:true,
-      navText: ["<i class=\"fa fa-chevron-left\"></i>", "<i class=\"fa fa-chevron-right\"></i>"],
-      autoplayHoverPause:true,
-      autoplay:true, //Автозапуск слайдера
-      smartSpeed:2000, //Время движения слайда
-      animateIn: 'fadeIn'
-    });
-});
-
 /*
 Item name: Menuzord - Responsive Megamenu
 Item Url: http://codecanyon.net/item/menuzord-responsive-megamenu/8536398
@@ -57,12 +39,12 @@ License: http://codecanyon.net/licenses
         // dropdown/megamenu indicators
         $(menu).children("li").children("a").each(function(){
             if($(this).siblings(".dropdown, .megamenu").length > 0){
-                $(this).append("<span class='indicator'>" + settings.indicatorFirstLevel + "</span>");
+                //$(this).append("<span class='indicator'>" + settings.indicatorFirstLevel + "</span>");
             }
         });
         $(menu).find(".dropdown").children("li").children("a").each(function(){
             if($(this).siblings(".dropdown").length > 0){
-                $(this).append("<span class='indicator'>" + settings.indicatorSecondLevel + "</span>");
+                //$(this).append("<span class='indicator'>" + settings.indicatorSecondLevel + "</span>");
             }
         });
 
@@ -142,6 +124,7 @@ License: http://codecanyon.net/licenses
         function portraitMode(){
             $(menu).find(".dropdown, .megamenu").hide(0);
             $(menu).find(".indicator").each(function(){
+              console.log($(this).parent("a").siblings(".dropdown, .megamenu"));
                 if($(this).parent("a").siblings(".dropdown, .megamenu").length > 0){
                     $(this).bind("click", function(e){
                         $(menu).scrollTo({top: 45, left: 0}, 600);

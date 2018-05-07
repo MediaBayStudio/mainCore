@@ -5,23 +5,22 @@
  * @subpackage your-clean-template-3
  */
 ?>
-	<footer>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<?php $args = array( // опции для вывода нижнего меню, чтобы они работали, меню должно быть создано в админке
-						'theme_location' => 'bottom', // идентификатор меню, определен в register_nav_menus() в function.php
-						'container'=> false, // обертка списка, false - это ничего
-						'menu_class' => 'nav nav-pills bottom-menu', // класс для ul
-				  		'menu_id' => 'bottom-nav', // id для ul
-				  		'fallback_cb' => false
-				  	);
-					wp_nav_menu($args); // выводим нижние меню
-					?>
-				</div>
-			</div>
-		</div>
-	</footer>
+<footer class="page-footer">
+  <div class="footer-info-wrapper">
+    <div class="footer-info-main">
+      <?php if(!dynamic_sidebar('footer')): ?>
+        <p>Настроить можно в Панеле администратора - Внешний вид - Виджеты - Футер</p>
+      <?php endif; ?>
+    </div>
+  </div>
+  <div class="footer-copy-wrap">
+    <div class="footer-copy">
+      <?php if(!dynamic_sidebar('copywrite')): ?>
+        <p>Настроить можно в Панеле администратора - Внешний вид - Виджеты - Копирайт</p>
+      <?php endif; ?>
+    </div>
+  </div>
+</footer>
 <?php wp_footer(); // необходимо для работы плагинов и функционала  ?>
 </body>
 </html>

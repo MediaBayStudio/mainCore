@@ -13,6 +13,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- meta name="msapplication-config" content="/browserconfig.xml" / -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
 	<title> <?php is_home() ? bloginfo('description') : wp_title(''); ?> </title>
 	<?php wp_head(); // необходимо для работы плагинов и функционала ?>
 </head>

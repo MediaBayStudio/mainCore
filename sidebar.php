@@ -6,7 +6,9 @@
  */
 ?>
 <?php if (is_active_sidebar( 'sidebar' )) { // если в сайдбаре есть что выводить ?>
-<aside>
-	<?php dynamic_sidebar('sidebar'); // выводим сайдбар, имя определено в functions.php ?>
-</aside>
+	<aside class="page-sidebar" role="complementary">
+	    <?php if(!dynamic_sidebar('sidebar')): ?>
+	        <p>Виджеты сайдбара</p>
+	    <?php endif; ?>
+	</aside>
 <?php } ?>
