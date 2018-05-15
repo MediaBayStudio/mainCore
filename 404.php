@@ -4,16 +4,24 @@
  * @package WordPress
  * @subpackage your-clean-template-3
  */
-get_header(); // Подключаем header.php ?>
-<section>
-	<div class="container">
-		<div class="row">
-			<div class="<?php content_class_by_sidebar(); // функция подставит класс в зависимости от того есть ли сайдбар, лежит в functions.php ?>">
-				<h1>Ой, это 404!</h1>
-				<p>Блаблабла 404 Блаблабла</p>
-			</div>
-			<?php get_sidebar(); // подключаем sidebar.php ?>
-		</div>
-	</div>
-</section>
-<?php get_footer(); // подключаем footer.php ?>
+ get_header(); ?>
+
+ <div class="main-wrapper">
+   <main class="page-main">
+     <section class="slider-section">
+        <img data-src="<?php bloginfo('template_url'); ?>/images/404.jpg" alt='Ошибка 404' class="lazyload" width="840" height="480"/>
+     </section>
+     <div class="page-main--content">
+       <section class="page-main--categories">
+         <?php dynamic_sidebar('main'); ?>
+       </section>
+       <sectioin class="page-main--modules">
+         <?php dynamic_sidebar('modules'); ?>
+       </section>
+     </div>
+   </main>
+   <?php get_sidebar(); ?>
+ </div>
+
+
+ <?php get_footer(); ?>

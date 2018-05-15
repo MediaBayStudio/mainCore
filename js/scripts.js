@@ -21,15 +21,15 @@ jQuery(document).ready(function(){
 
 jQuery(function($) {
     $('.last-post-container').on('click', '.pagination a', function(e){
-        var height = $(".last-post-container").height();
+        var height = $(".line--posts").height();
         $('html, body').animate({
-            scrollTop: target.offset().top - 40
+            scrollTop: $('.last-post-container').offset().top - 40
         }, 1000);
         e.preventDefault();
         var link = $(this).attr('href');
-        $('.line-post').fadeOut(500, function(){
-            $(".last-post-container").height(height);
-            $(this).load(link + ' .line-post', function() {
+        $('.last-post-container').fadeOut(500, function(){
+            $(".line--posts").height(height+50);
+            $(this).load(link + ' .last-post-container', function() {
                 $(this).fadeIn(500);
             });
         });
@@ -37,17 +37,14 @@ jQuery(function($) {
 });
 
 jQuery(function($) {
-    var target = $('.category--lasts');
-    $('.category--line').on('click', '.pagination a', function(e){
+    $('.cat-last-post-wrapper').on('click', '.pagination a', function(e){
         $('html, body').animate({
-            scrollTop: target.offset().top - 90
+            scrollTop: $('.cat-last-post-wrapper').offset().top - 20
         }, 1000);
         e.preventDefault();
         var link = $(this).attr('href');
-        var height = $(".category--lasts").height();
-        $('.category--line').fadeOut(500, function(){
-            $(".category--lasts-wrapper").height(height);
-            $(this).load(link + ' .category--line', function() {
+        $('.cat-last-post-wrapper').fadeOut(500, function(){
+            $(this).load(link + ' .line-post__container', function() {
                 $(this).fadeIn(500);
             });
         });
