@@ -701,7 +701,7 @@ class mostPopularPosts extends WP_Widget {
 		echo $args['before_widget'];
 		if ( ! empty( $title ) )
 			echo $args['before_title'] . $title . $args['after_title']; ?>
-			<ul class="category--grid">
+			<ul class="category--grid category--grid__in-sidebar">
 				<?php
 					array_pop($instance);
 					foreach($instance as $key=>$value)
