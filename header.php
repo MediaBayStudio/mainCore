@@ -35,7 +35,7 @@
 		<div class="page-header__logo-wrapper">
 			<div class="page-header__logo">
 				<a href="/" id="home">
-					<img src="<?php echo get_template_directory_uri(); ?>/images/logo.svg"
+					<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo.svg"
 							 alt="<?php bloginfo( 'name' ); ?>"
 							 class="lazyload" width="190" height="70">
 				</a>

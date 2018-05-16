@@ -14,7 +14,7 @@
                   <?php
                     if (!has_post_thumbnail( $post->id ) || !(@get_headers(wp_get_attachment_image_url( get_post_thumbnail_id( $post->id ), 'responsive_800' )))) {
                   ?>
-                     <img src="<?php echo get_bloginfo( 'template_directory' )?>/images/no-image.svg" alt="Избражение не найдено" width="680" height="390">
+                     <img src="<?php echo get_stylesheet_directory_uri();?>/images/no-image.svg" alt="Избражение не найдено" width="680" height="390">
                   <?php }  else { ?>
                       <img src="<?php echo get_bloginfo( 'template_directory' )?>/images/dots_600.svg"
                       data-srcset="<?php echo wp_get_attachment_image_url( get_post_thumbnail_id( $post->id ), 'responsive_800' ); ?> 1x,
@@ -42,38 +42,70 @@
               </section>
             <?php endwhile; endif; ?>
           </article>
-          <?php
-            $category = get_the_category();
-            $cat_list = $category[0]->cat_ID;  // категория, к которой относится запись
-            while (get_category($cat_list)->parent != 0) { // повторять, пока не дойдем до корневой категории
-              if ( get_category($cat_list)->category_count < 3 ) // если в ней меньше 3 записей
-                $cat_list = get_category($cat_list)->parent; // получаем родительскую категорию
-              else {
-                break;
-              }
-            }
-            if ( get_category($cat_list)->category_count < 3 ) {
-              print_r(wp_list_categories());
-            }
-            if ( get_category($cat_list)->category_count > 3 ) {
-          ?>
           <section class="related">
             <div class="related-title">
               <h1>Вам будет интересно</h1>
             </div>
             <div class="related-posts">
             <?php
-              $postID = get_the_ID();
               $category = get_the_category();
-              $cat_list = $category[0]->cat_ID;
+              $catID = $category[0]->cat_ID;  // категория, к которой относится запись
+              // ID родительской категории
+              $ancestorID = get_ancestors( $catID, 'category' );
+              // Количество постов во вложенной категории
+              $post_count = get_category( $catID )->category_count;
+              // Если в дочерней категории 3 или больше постов
+              if ($post_count >= 3) {
+                $menupost = get_posts(
+                    array (
+                        'cat' => $catID,
+                        'posts_per_page' => 3,
+                        'order' => 'DESC',
+                        'orderby' => 'date'
+                        ));
+              }
 
-              $mypost = get_posts(
-                      array (
-                          'category' => $cat_list,
-                          'posts_per_page' => 3,
-                          'orderby' => 'rand',
-                          'exclude' => $postID ));
-              foreach( $mypost as $post ) : setup_postdata($post); ?>
+              // Если меньше 3 - выводим недостающие из родительской категории
+              else {
+                // Получаем все посты вложенной категории
+                $child_post = get_posts(
+                    array (
+                        'cat' => $catID,
+                        'posts_per_page' => $post_count,
+                        'order' => 'DESC',
+                        'orderby' => 'date'
+                        ));
+                $i = 0;
+                foreach( $child_post as $post ) :
+                  setup_postdata($post);
+                  $child_posts_ID[$i] = $post->ID;
+                  $i++;
+                endforeach;
+
+                // Получаем количество недостающих постов
+                $parent_post_count = 3 - $i;
+                // Берем рандомно недостающие посты из родительской категории
+                $parent_post = get_posts(
+                    array (
+                        'cat' => $ancestorID[0],
+                        'posts_per_page' => $parent_post_count,
+                        'order' => 'DESC',
+                        'orderby' => 'rand'
+                        ));
+                foreach( $parent_post as $post ) :
+                  setup_postdata($post);
+                  $child_posts_ID[$i] = $post->ID;
+                  $i++;
+                endforeach;
+
+                // Передаем на вывод массив с ID полученных постов
+                $menupost = get_posts(
+                    array (
+                        'post__in' => $child_posts_ID,
+                        'orderby' => 'post__in',
+                        ));
+              }
+              foreach( $menupost as $post ) : setup_postdata($post); ?>
               <div class="related-item">
                 <div class="media-wrapper">
                   <a href="<?php the_permalink(); ?>">
@@ -81,7 +113,7 @@
                       <?php
                         if (!has_post_thumbnail( $post->id ) || !(@get_headers(wp_get_attachment_image_url( get_post_thumbnail_id( $post->id ), 'responsive_800' )))) {
                       ?>
-                         <img src="<?php echo get_bloginfo( 'template_directory' )?>/images/no-image.svg" alt="Избражение не найдено" width="200" height="120">
+                         <img src="<?php echo get_stylesheet_directory_uri();?>/images/no-image.svg" alt="Избражение не найдено" width="200" height="120">
                       <?php }  else { ?>
                           <img src="<?php echo get_bloginfo( 'template_directory' )?>/images/dots_150.svg"
                           data-srcset="<?php echo wp_get_attachment_image_url( get_post_thumbnail_id( $post->id ), 'responsive_300' ); ?> 1x,
@@ -105,7 +137,7 @@
               </div>
             <?php endforeach; wp_reset_query(); ?>
           </section>
-        <?php }; comments_template(); ?>
+        <?php comments_template(); ?>
 
           <a id="toTop" class="footer-up"><i class="fa fa-chevron-up" aria-hidden="true"></i> Наверх</a>
       </main>

@@ -107,7 +107,7 @@ class showTwoPosts extends WP_Widget {
 									<?php
 										if (!has_post_thumbnail( $post->id ) || !(@get_headers(wp_get_attachment_image_url( get_post_thumbnail_id( $post->id ), 'thumbnail' )))) {
 									?>
-										<img src="<?php echo get_bloginfo( 'template_directory' )?>/images/no-image.svg" alt="Избражение не найдено" width="300" height="170">
+										<img src="<?php echo get_stylesheet_directory_uri();?>/images/no-image.svg" alt="Избражение не найдено" width="300" height="170">
 									<?php }  else { ?>
 											<img src="<?php echo get_bloginfo( 'template_directory' )?>/images/dots_300.svg"
 											data-srcset="<?php echo wp_get_attachment_image_url( get_post_thumbnail_id( $post->id ), 'thumbnail' ); ?> 1x,
@@ -232,7 +232,7 @@ class showFourPosts extends WP_Widget {
 							<?php
 								if (!has_post_thumbnail( $post->id ) || !(@get_headers(wp_get_attachment_image_url( get_post_thumbnail_id( $post->id ), 'thumbnail' )))) {
 							?>
-								<img src="<?php echo get_bloginfo( 'template_directory' )?>/images/no-image.svg" alt="Избражение не найдено" width="300" height="170">
+								<img src="<?php echo get_stylesheet_directory_uri();?>/images/no-image.svg" alt="Избражение не найдено" width="300" height="170">
 							<?php }  else { ?>
 									<img src="<?php echo get_bloginfo( 'template_directory' )?>/images/dots_300.svg"
 									data-srcset="<?php echo wp_get_attachment_image_url( get_post_thumbnail_id( $post->id ), 'thumbnail' ); ?> 1x,
@@ -355,7 +355,7 @@ class showLinePosts extends WP_Widget {
 										<?php
 											if (!has_post_thumbnail( $post->id ) || !(@get_headers(wp_get_attachment_image_url( get_post_thumbnail_id( $post->id ), 'thumbnail' )))) {
 										?>
-											<img src="<?php echo get_bloginfo( 'template_directory' )?>/images/no-image.svg" alt="Избражение не найдено" width="200" height="130">
+											<img src="<?php echo get_stylesheet_directory_uri();?>/images/no-image.svg" alt="Избражение не найдено" width="200" height="130">
 										<?php }  else { ?>
 												<img src="<?php echo get_bloginfo( 'template_directory' )?>/images/dots_150.svg"
 												data-srcset="<?php echo wp_get_attachment_image_url( get_post_thumbnail_id( $post->id ), 'responsive_200' ); ?> 1x,
@@ -505,7 +505,7 @@ class mostCommentedPosts extends WP_Widget {
 								<?php
 									if (!has_post_thumbnail( $post->id ) || !(@get_headers(wp_get_attachment_image_url( get_post_thumbnail_id( $post->id ), 'responsive_200' )))) {
 								?>
-									<img src="<?php echo get_bloginfo( 'template_directory' )?>/images/no-image.svg" alt="Избражение не найдено" width="130" height="75">
+									<img src="<?php echo get_stylesheet_directory_uri();?>/images/no-image.svg" alt="Избражение не найдено" width="130" height="75">
 								<?php }  else { ?>
 										<img src="<?php echo get_bloginfo( 'template_directory' )?>/images/dots_150.svg"
 										data-srcset="<?php echo wp_get_attachment_image_url( get_post_thumbnail_id( $post->id ), 'responsive_150' ); ?> 1x,
@@ -619,7 +619,7 @@ class randomPosts extends WP_Widget {
 								<?php
 									if (!has_post_thumbnail( $post->id ) || !(@get_headers(wp_get_attachment_image_url( get_post_thumbnail_id( $post->id ), 'responsive_200' )))) {
 								?>
-									<img src="<?php echo get_bloginfo( 'template_directory' )?>/images/no-image.svg" alt="Избражение не найдено" width="130" height="75">
+									<img src="<?php echo get_stylesheet_directory_uri();?>/images/no-image.svg" alt="Избражение не найдено" width="130" height="75">
 								<?php }  else { ?>
 										<img src="<?php echo get_bloginfo( 'template_directory' )?>/images/dots_150.svg"
 										data-srcset="<?php echo wp_get_attachment_image_url( get_post_thumbnail_id( $post->id ), 'responsive_150' ); ?> 1x,
@@ -731,7 +731,7 @@ class mostPopularPosts extends WP_Widget {
 								<?php
 									if (!has_post_thumbnail( $post->id ) || !(@get_headers(wp_get_attachment_image_url( get_post_thumbnail_id( $post->id ), 'thumbnail' )))) {
 								?>
-									<img src="<?php echo get_bloginfo( 'template_directory' )?>/images/no-image.svg" alt="Избражение не найдено" width="300" height="170">
+									<img src="<?php echo get_stylesheet_directory_uri();?>/images/no-image.svg" alt="Избражение не найдено" width="300" height="170">
 								<?php }  else { ?>
 										<img src="<?php echo get_bloginfo( 'template_directory' )?>/images/dots_300.svg"
 										data-srcset="<?php echo wp_get_attachment_image_url( get_post_thumbnail_id( $post->id ), 'thumbnail' ); ?> 1x,
