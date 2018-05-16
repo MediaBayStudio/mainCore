@@ -1,2 +1,4 @@
 # mainCore
-Studio's main theme
+Базовая тема mediaTheme. Версия для расшаривания на рабочие проекты. Разработка ведется через less, gulp.
+---
+
